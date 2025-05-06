@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+            
+        }
+        body {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            /* background-color: #f4f4f4; */
+            background: linear-gradient(90deg, blue, purple);
+        }
+        #container {
+            max-width: 100%;
+            word-wrap: break-word; /* Ensures long words break */
+            overflow-wrap: break-word;
+        }
+        #typing {
+            font-size: 8vw; /* Adjusts based on screen width */
+            font-weight: bold;
+            white-space: pre-wrap; /* Allows text to wrap */
+            overflow: hidden;
+            border-right: 2px solid black;
+            display: inline-block;
+            word-break: break-word; /* Breaks long words */
+            -webkit-text-stroke: 2px green;
+        }
+        #message {
+            font-size: 4vw; /* Adjusts based on screen width */
+            opacity: 0;
+            transition: opacity 1s ease-in;
+            margin-top: 10px;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 600px) {
+            #typing {
+                font-size: 10vw; /* Larger for smaller screens */
+                display: block;
+            }
+            #message {
+                font-size: 5vw;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const text = "Welcome to Edusphere";
+            const typingElement = document.getElementById("typing");
+            const messageElement = document.getElementById("message");
+            let i = 0;
+
+            function typeText() {
+                if (i < text.length) {
+                    typingElement.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeText, 100);
+                } else {
+                    typingElement.style.borderRight = "none"; // Remove cursor effect
+                    setTimeout(() => {
+                        messageElement.style.opacity = 1; // Show the second message
+                    }, 500);
+                }
+            }
+
+            typeText();
+
+            setTimeout(function () {
+                window.location.href = "style_img.html";
+            }, 6000);
+        });
+    </script>
+</head>
+<body>
+    <div id="container">
+        <h1 id="typing"></h1>
+        <p id="message">An interactive Learning Management System</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - EduSphere</title>
+    
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #0066cc;
+            --accent: #4ade80;
+            --light-bg: #f0f4f8;
+            --dark-blue: #0d2b57;
+            --white: #ffffff;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-700: #374151;
+            --gray-900: #111827;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--gray-900);
+            line-height: 1.5;
+        }
+        
+        /* Navigation */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-right: 0.5rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin: 0 1rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-700);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+            z-index: 1;
+            border-radius: 8px;
+            padding: 0.5rem 0;
+        }
+        
+        .dropdown-content a {
+            color: var(--gray-700);
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            display: block;
+            font-weight: 400;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: var(--gray-100);
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .btn {
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--white);
+            border: none;
+        }
+        
+        .btn-accent:hover {
+            background-color: #3cbe6e;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-color: var(--light-bg);
+            padding: 3rem 5%;
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .hero-tag {
+            color: var(--gray-700);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .hero-title {
+            color: var(--dark-blue);
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+        }
+        
+        .hero-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .hero-text {
+            flex: 1;
+            max-width: 500px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            max-width: 500px;
+            position: relative;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .hero-badge {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transform: rotate(10deg);
+            font-weight: 500;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 3rem 5%;
+            border-radius: 16px;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+        
+        .faq-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding: 1.5rem 0;
+            cursor: pointer;
+        }
+        
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            padding: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease-out, max-height 0.3s ease-out, padding 0.3s ease-out;
+        }
+        
+        .faq-answer.open {
+            max-height: 200px;
+            padding: 1rem 0 0 0;
+            opacity: 1;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-icon.rotate {
+            transform: rotate(180deg);
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content {
+                flex-direction: column;
+            }
+            
+            .hero-image {
+                margin-top: 2rem;
+            }
+            
+            .faq-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <i class="bi bi-mortarboard-fill logo-icon"></i>
+            EduSphere
+        </a>
+        
+        <ul class="nav-links">
+            <li><a href="#">Features</a></li>
+            <li class="dropdown">
+                <a href="#">Solutions <i class="bi bi-chevron-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="#">For Students</a>
+                    <a href="#">For Teachers</a>
+                    <a href="#">For Institutions</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Resources <i class="bi bi-chevron-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="#">Blog</a>
+                    <a href="#">Tutorials</a>
+                    <a href="#">Documentation</a>
+                </div>
+            </li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#" class="btn btn-accent">Support</a></li>
+        </ul>
+        
+        <a href="index.html" class="btn btn-primary">Go to app</a>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <span class="hero-tag">FAQ</span>
+        <h1 class="hero-title">Let's talk about<br>online learning</h1>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <p>Here we provide solutions for the most common questions about online education. From registering and accessing your account to completing courses and earning certificates.</p>
+            </div>
+            
+            <div class="hero-image">
+                <img src="/placeholder.svg?height=300&width=500" alt="EduSphere Learning Dashboard">
+                <div class="hero-badge">Learn anywhere</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <h2 class="faq-title">General</h2>
+        
+        <div class="faq-item" onclick="toggleAnswer(1)">
+            <div class="faq-question">
+                <span>What is an online learning platform?</span>
+                <i class="bi bi-chevron-down faq-icon" id="icon1"></i>
+            </div>
+            <div class="faq-answer" id="answer1">
+                <p>Online learning platforms provide educational content through digital means, allowing students to access courses, lectures, and assignments remotely.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item" onclick="toggleAnswer(2)">
+            <div class="faq-question">
+                <span>How do I enroll in a course?</span>
+                <i class="bi bi-chevron-down faq-icon" id="icon2"></i>
+            </div>
+            <div class="faq-answer" id="answer2">
+                <p>To enroll, sign up on the platform, browse available courses, and click the "Enroll" button. Some courses may require payment, while others are free.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item" onclick="toggleAnswer(3)">
+            <div class="faq-question">
+                <span>Can I access courses on mobile devices?</span>
+                <i class="bi bi-chevron-down faq-icon" id="icon3"></i>
+            </div>
+            <div class="faq-answer" id="answer3">
+                <p>Yes! Most online learning platforms are mobile-friendly or have dedicated apps for better accessibility on smartphones and tablets.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item" onclick="toggleAnswer(4)">
+            <div class="faq-question">
+                <span>Do I get a certificate after completing a course?</span>
+                <i class="bi bi-chevron-down faq-icon" id="icon4"></i>
+            </div>
+            <div class="faq-answer" id="answer4">
+                <p>Many platforms offer certificates upon course completion. Some are free, while others may require an additional fee.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item" onclick="toggleAnswer(5)">
+            <div class="faq-question">
+                <span>What should I do if I forget my login credentials?</span>
+                <i class="bi bi-chevron-down faq-icon" id="icon5"></i>
+            </div>
+            <div class="faq-answer" id="answer5">
+                <p>You can reset your password by clicking the "Forgot Password" option on the login page and following the instructions.</p>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        function toggleAnswer(id) {
+            let answer = document.getElementById("answer" + id);
+            let icon = document.getElementById("icon" + id);
+            
+            // Close all other answers
+            let allAnswers = document.querySelectorAll(".faq-answer");
+            let allIcons = document.querySelectorAll(".faq-icon");
+            
+            allAnswers.forEach(ans => {
+                if (ans.id !== "answer" + id) {
+                    ans.classList.remove("open");
+                }
+            });
+            
+            allIcons.forEach(ic => {
+                if (ic.id !== "icon" + id) {
+                    ic.classList.remove("rotate");
+                }
+            });
+            
+            // Toggle current answer
+            answer.classList.toggle("open");
+            icon.classList.toggle("rotate");
+        }
+    </script>
+</body>
+</html>

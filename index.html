@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edusphere - Transform Your Future Through Education</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon"><i class="fas fa-graduation-cap"></i></span>
+        <span class="logo-text">Edusphere</span>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#instructors">Instructors</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="nav-buttons">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+          </button>
+        <a href="login_register.php" class="btn btn-secondary">Log In / Register</a>
+        <!-- <a href="login_register2.php" class="btn btn-primary">Sign Up</a> -->
+      </div>
+      <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Transform Your Future Through Education</h1>
+        <p>Unlock your potential with Edusphere's expert-led courses, cutting-edge learning tools, and a supportive global community.</p>
+        <div class="hero-cta">
+          <a href="#courses" class="btn btn-primary btn-large">Explore Courses</a>
+          <a href="#" class="btn btn-outline btn-large">Watch Demo <i class="fas fa-play-circle"></i></a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number">20+</span>
+            <span class="stat-label">Courses</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">2k+</span>
+            <span class="stat-label">Students</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">200+</span>
+            <span class="stat-label">Instructors</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="logo.png" alt="Students learning online">
+        <div class="floating-card card-1">
+          <i class="fas fa-video"></i>
+          <span>Live Classes</span>
+        </div>
+        <div class="floating-card card-2">
+          <i class="fas fa-certificate"></i>
+          <span>Certification</span>
+        </div>
+        <div class="floating-card card-3">
+          <i class="fas fa-users"></i>
+          <span>Community</span>
+        </div>
+      </div>
+    </div>
+    <div class="shape-divider">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Choose Edusphere?</h2>
+        <p>We combine innovation, expertise, and community to deliver an exceptional learning experience</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-laptop"></i>
+          </div>
+          <h3>Flexible Learning</h3>
+          <p>Learn at your own pace with 24/7 access to courses from any device, anywhere in the world.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-chalkboard-teacher"></i>
+          </div>
+          <h3>Expert Instructors</h3>
+          <p>Learn from industry professionals and academics with real-world experience and passion for teaching.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <h3>Recognized Certificates</h3>
+          <p>Earn certificates recognized by top employers to showcase your skills and knowledge.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <h3>Interactive Community</h3>
+          <p>Connect with fellow learners, participate in discussions, and collaborate on projects.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3>Practical Projects</h3>
+          <p>Apply your knowledge through hands-on projects designed to build your portfolio.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3>24/7 Support</h3>
+          <p>Get help whenever you need it with our dedicated support team and comprehensive resources.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Section -->
+  <section class="courses" id="courses">
+    <div class="container">
+      <div class="section-header">
+        <h2>Explore Our Popular Courses</h2>
+        <p>Discover top-rated courses across various disciplines to advance your career</p>
+      </div>
+      <div class="categories">
+        <button class="category-btn active">All Categories</button>
+        <button class="category-btn">Technology</button>
+        <button class="category-btn">Business</button>
+        <button class="category-btn">Design</button>
+        <button class="category-btn">Marketing</button>
+        <button class="category-btn">Science</button>
+      </div>
+      <div class="courses-grid">
+        <div class="course-card">
+          <div class="course-image">
+            <img src="https://via.placeholder.com/300x200" alt="Web Development Course">
+            <div class="course-tag">Bestseller</div>
+          </div>
+          <div class="course-content">
+            <div class="course-info">
+              <span class="course-category">Technology</span>
+              <div class="course-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>4.8 (2.4k)</span>
+              </div>
+            </div>
+            <h3>Complete Web Development Bootcamp</h3>
+            <p>Learn HTML, CSS, JavaScript, React, Node.js and more to become a full-stack web developer.</p>
+            <div class="course-meta">
+              <span><i class="fas fa-clock"></i> 42 hours</span>
+              <span><i class="fas fa-video"></i> 145 lessons</span>
+              <span><i class="fas fa-signal"></i> All levels</span>
+            </div>
+            <div class="course-footer">
+              <div class="course-instructor">
+                <img src="https://via.placeholder.com/40x40" alt="Instructor">
+                <span>Dr. Sarah Johnson</span>
+              </div>
+              <div class="course-price">$89.99</div>
+            </div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-image">
+            <img src="https://via.placeholder.com/300x200" alt="Data Science Course">
+            <div class="course-tag">New</div>
+          </div>
+          <div class="course-content">
+            <div class="course-info">
+              <span class="course-category">Science</span>
+              <div class="course-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>5.0 (1.2k)</span>
+              </div>
+            </div>
+            <h3>Data Science & Machine Learning Masterclass</h3>
+            <p>Master data analysis, visualization, and machine learning with Python, TensorFlow, and more.</p>
+            <div class="course-meta">
+              <span><i class="fas fa-clock"></i> 56 hours</span>
+              <span><i class="fas fa-video"></i> 210 lessons</span>
+              <span><i class="fas fa-signal"></i> Intermediate</span>
+            </div>
+            <div class="course-footer">
+              <div class="course-instructor">
+                <img src="https://via.placeholder.com/40x40" alt="Instructor">
+                <span>Prof. Michael Chen</span>
+              </div>
+              <div class="course-price">$129.99</div>
+            </div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-image">
+            <img src="https://via.placeholder.com/300x200" alt="Digital Marketing Course">
+          </div>
+          <div class="course-content">
+            <div class="course-info">
+              <span class="course-category">Marketing</span>
+              <div class="course-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span>4.0 (856)</span>
+              </div>
+            </div>
+            <h3>Digital Marketing Strategy & Social Media</h3>
+            <p>Learn to create effective digital marketing campaigns and master social media platforms.</p>
+            <div class="course-meta">
+              <span><i class="fas fa-clock"></i> 38 hours</span>
+              <span><i class="fas fa-video"></i> 120 lessons</span>
+              <span><i class="fas fa-signal"></i> Beginner</span>
+            </div>
+            <div class="course-footer">
+              <div class="course-instructor">
+                <img src="https://via.placeholder.com/40x40" alt="Instructor">
+                <span>Emma Rodriguez</span>
+              </div>
+              <div class="course-price">$69.99</div>
+            </div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-image">
+            <img src="https://via.placeholder.com/300x200" alt="UX/UI Design Course">
+            <div class="course-tag">Popular</div>
+          </div>
+          <div class="course-content">
+            <div class="course-info">
+              <span class="course-category">Design</span>
+              <div class="course-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>4.7 (1.8k)</span>
+              </div>
+            </div>
+            <h3>UX/UI Design: Create Beautiful User Experiences</h3>
+            <p>Learn to design intuitive interfaces and create engaging user experiences for web and mobile.</p>
+            <div class="course-meta">
+              <span><i class="fas fa-clock"></i> 45 hours</span>
+              <span><i class="fas fa-video"></i> 165 lessons</span>
+              <span><i class="fas fa-signal"></i> All levels</span>
+            </div>
+            <div class="course-footer">
+              <div class="course-instructor">
+                <img src="https://via.placeholder.com/40x40" alt="Instructor">
+                <span>Alex Thompson</span>
+              </div>
+              <div class="course-price">$94.99</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="courses-cta">
+        <a href="#" class="btn btn-primary">View All Courses</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fas fa-user-graduate"></i>
+          </div>
+          <div class="stat-number" data-count="50000">0</div>
+          <div class="stat-label">Students Worldwide</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fas fa-book-open"></i>
+          </div>
+          <div class="stat-number" data-count="500">0</div>
+          <div class="stat-label">Courses Available</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fas fa-award"></i>
+          </div>
+          <div class="stat-number" data-count="15000">0</div>
+          <div class="stat-label">Certificates Issued</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fas fa-globe"></i>
+          </div>
+          <div class="stat-number" data-count="120">0</div>
+          <div class="stat-label">Countries Reached</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instructors Section -->
+  <section class="instructors" id="instructors">
+    <div class="container">
+      <div class="section-header">
+        <h2>Meet Our Expert Instructors</h2>
+        <p>Learn from industry leaders and academic experts passionate about education</p>
+      </div>
+      <div class="instructors-grid">
+        <div class="instructor-card">
+          <div class="instructor-image">
+            <img src="https://via.placeholder.com/300x300" alt="Dr. Sarah Johnson">
+          </div>
+          <div class="instructor-info">
+            <h3>Dr. Sarah Johnson</h3>
+            <p class="instructor-title">Web Development Expert</p>
+            <p class="instructor-bio">Former Google engineer with 15+ years of experience in web technologies and software development.</p>
+            <div class="instructor-social">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fas fa-globe"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="instructor-card">
+          <div class="instructor-image">
+            <img src="https://via.placeholder.com/300x300" alt="Prof. Michael Chen">
+          </div>
+          <div class="instructor-info">
+            <h3>Prof. Michael Chen</h3>
+            <p class="instructor-title">Data Science Specialist</p>
+            <p class="instructor-bio">PhD in Computer Science with research focus on AI and machine learning. Author of 3 books on data science.</p>
+            <div class="instructor-social">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fas fa-globe"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="instructor-card">
+          <div class="instructor-image">
+            <img src="https://via.placeholder.com/300x300" alt="Emma Rodriguez">
+          </div>
+          <div class="instructor-info">
+            <h3>Emma Rodriguez</h3>
+            <p class="instructor-title">Digital Marketing Strategist</p>
+            <p class="instructor-bio">Former Marketing Director at Fortune 500 companies with expertise in social media and content strategy.</p>
+            <div class="instructor-social">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fas fa-globe"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="instructor-card">
+          <div class="instructor-image">
+            <img src="https://via.placeholder.com/300x300" alt="Alex Thompson">
+          </div>
+          <div class="instructor-info">
+            <h3>Alex Thompson</h3>
+            <p class="instructor-title">UX/UI Design Lead</p>
+            <p class="instructor-bio">Award-winning designer with experience at top tech companies. Specializes in user-centered design approaches.</p>
+            <div class="instructor-social">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fas fa-globe"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="instructors-cta">
+        <a href="#" class="btn btn-secondary">View All Instructors</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Our Students Say</h2>
+        <p>Hear from learners who have transformed their careers with Edusphere</p>
+      </div>
+      <div class="testimonial-slider">
+        <div class="testimonial-slide active">
+          <div class="testimonial-content">
+            <div class="testimonial-quote">
+              <i class="fas fa-quote-left"></i>
+              <p>Edusphere's web development course completely changed my career path. Within 3 months of completing the course, I landed a job as a junior developer at a tech startup. The hands-on projects and mentor support made all the difference.</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="https://via.placeholder.com/80x80" alt="James Wilson">
+              <div class="author-info">
+                <h4>James Wilson</h4>
+                <p>Web Developer at TechStart Inc.</p>
+                <div class="testimonial-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-content">
+            <div class="testimonial-quote">
+              <i class="fas fa-quote-left"></i>
+              <p>As a busy professional, I needed a flexible learning solution that wouldn't compromise on quality. Edusphere delivered exactly that. The data science course was comprehensive, challenging, and directly applicable to my work.</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="https://via.placeholder.com/80x80" alt="Priya Sharma">
+              <div class="author-info">
+                <h4>Priya Sharma</h4>
+                <p>Data Analyst at Global Finance</p>
+                <div class="testimonial-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-content">
+            <div class="testimonial-quote">
+              <i class="fas fa-quote-left"></i>
+              <p>The UX/UI design course exceeded my expectations. The instructor's feedback on my projects was invaluable, and the community of fellow students provided great support and networking opportunities. Worth every penny!</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="https://via.placeholder.com/80x80" alt="David Kim">
+              <div class="author-info">
+                <h4>David Kim</h4>
+                <p>UI Designer at Creative Solutions</p>
+                <div class="testimonial-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-controls">
+        <button class="testimonial-btn prev"><i class="fas fa-chevron-left"></i></button>
+        <div class="testimonial-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <button class="testimonial-btn next"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Start Your Learning Journey?</h2>
+        <p>Join thousands of students already learning with Edusphere. Get access to 500+ courses today!</p>
+        <div class="cta-form">
+          <input type="email" placeholder="Enter your email address">
+          <button class="btn btn-primary">Get Started</button>
+        </div>
+        <div class="cta-features">
+          <div class="cta-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>7-day free trial</span>
+          </div>
+          <div class="cta-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Cancel anytime</span>
+          </div>
+          <div class="cta-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Certificate included</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <span class="logo-icon"><i class="fas fa-graduation-cap"></i></span>
+            <span class="logo-text">Edusphere</span>
+          </div>
+          <p>Transforming education through technology and innovation. Our mission is to make quality education accessible to everyone, everywhere.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#instructors">Instructors</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="#">Technology</a></li>
+            <li><a href="#">Business</a></li>
+            <li><a href="#">Design</a></li>
+            <li><a href="#">Marketing</a></li>
+            <li><a href="#">Science</a></li>
+            <li><a href="#">View All</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <ul>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>123 Education Street, Learning City, 10001</span>
+            </li>
+            <li>
+              <i class="fas fa-phone-alt"></i>
+              <span>+1 (555) 123-4567</span>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <span>info@edusphere.com</span>
+            </li>
+          </ul>
+          <div class="footer-newsletter">
+            <h3>Subscribe to Newsletter</h3>
+            <div class="newsletter-form">
+              <input type="email" placeholder="Your email address">
+              <button><i class="fas fa-paper-plane"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="copyright">
+          <p>&copy; 2025 Edusphere. All rights reserved.</p>
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <script>
+    // Register form submission
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("register-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            var password = document.getElementById("password").value;
+            var cpassword = document.getElementById("cpassword").value;
+            var userType = document.getElementById("user").value; // Get the selected user type (teacher or student)
+
+            if (password === cpassword) {
+                var formData = new FormData(this);
+                var xhr = new XMLHttpRequest();
+
+                // Dynamically set the endpoint based on user type
+                var endpoint = userType === "teacher" ? "teacher_signup.php" : "student_signup.php";
+                xhr.open("POST", endpoint, true);
+
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        var response = xhr.responseText.trim();
+                        console.log("Server Response:", response);
+
+                        if (response === "true") {
+                            registrationNotification("Loading File Please Wait......", true);
+                            registrationNotification("Welcome to EduSphere Learning Management System", false, "Access Granted");
+                            setTimeout(function () {
+                                var redirectUrl = userType === "teacher" ? "teacher/dashboard_teacher.php" : "student/dashboard_student.php";
+                                window.location.href = redirectUrl; // Redirect based on user type
+                            }, 1000);
+                        } else {
+                            registrationNotification("Registration failed. Please check your details.", false, "Registration Failed");
+                        }
+                    } else {
+                        console.error("Error: Unable to connect to the server.");
+                        registrationNotification("An error occurred. Please try again later.", false, "Error");
+                    }
+                };
+
+                xhr.onerror = function () {
+                    console.error("Error: Network error occurred.");
+                    registrationNotification("Network error. Please check your connection.", false, "Error");
+                };
+
+                xhr.send(formData);
+            } else {
+                registrationNotification("Passwords do not match", false, "Password Mismatch");
+            }
+        });
+
+        function registrationNotification(message, isLoading = false, header = "") {
+            var notification = document.createElement("div");
+            notification.className = "notification";
+            notification.style.position = "fixed";
+            notification.style.top = "10px";
+            notification.style.right = "10px";
+            notification.style.backgroundColor = isLoading ? "#4caf50" : "#f44336";
+            notification.style.color = "#fff";
+            notification.style.padding = "10px";
+            notification.style.borderRadius = "5px";
+            notification.style.boxShadow = "0px 0px 10px rgba(0,0,0,0.1)";
+            notification.style.zIndex = "1000";
+            notification.innerHTML = header ? `<strong>${header}</strong><br>${message}` : message;
+            document.body.appendChild(notification);
+
+            setTimeout(function () {
+                notification.style.transition = "opacity 0.5s";
+                notification.style.opacity = "0";
+                setTimeout(function () {
+                    notification.remove();
+                }, 500);
+            }, 3000);
+        }
+    });
+  </script>
+</body>
+</html>
