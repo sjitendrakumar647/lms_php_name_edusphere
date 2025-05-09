@@ -21,7 +21,7 @@ if ($user == 'student') {
     $check_username = mysqli_query($conn, "SELECT * FROM teacher WHERE username='$username'") or die(mysqli_error($conn));
     if (mysqli_num_rows($check_username) > 0) {
         echo '<script>alert("Teacher username already exists.");</script>';
-		echo '<script>window.location.href="../login_register2.php"</script>';
+		echo '<script>window.location.href="../login_register.php"</script>';
         exit;
     }
 }
