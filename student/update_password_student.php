@@ -15,11 +15,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if the password is not empty
     if (!empty($new_password)) {
         // Hash the new password before storing it
-        $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
+        // $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
 
         // Use prepared statement to prevent SQL injection
         $stmt = $conn->prepare("UPDATE student SET password = ? WHERE student_id = ?");
-        $stmt->bind_param("si", $hashed_password, $session_id);
+        $stmt->bind_param("si", $new_password, $session_id);
 
         if ($stmt->execute()) {
             // Redirect back to the change password page with a success message

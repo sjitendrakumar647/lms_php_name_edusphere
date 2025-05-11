@@ -14,11 +14,11 @@
                         <i class="bi bi-house-door"></i> Dashboard
                     </a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link navbar-link navbar-link-animation" href="courses.php">
                         <i class="bi bi-book"></i> Courses
                     </a>
-                </li>
+                </li> -->
                 <?php 
                 $query = mysqli_query($conn, "SELECT * FROM student WHERE student_id = '$session_id'") or die(mysqli_error());
                 $row = mysqli_fetch_array($query);
@@ -43,11 +43,6 @@
                             </div>
                         </li>
                         <li><hr class="dropdown-divider"></li>
-                        <li>
-                            <a class="dropdown-item menu-item-animation" href="profile.php">
-                                <i class="bi bi-person me-2"></i> My Profile
-                            </a>
-                        </li>
                         <li>
                             <a class="dropdown-item menu-item-animation" href="change_password_student.php">
                                 <i class="bi bi-key me-2"></i> Change Password

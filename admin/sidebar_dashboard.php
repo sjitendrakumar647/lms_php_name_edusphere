@@ -71,7 +71,7 @@
             <li><a href="../teacher/teachers.php"><i class="fa fa-chalkboard-teacher me-2"></i> Teachers</a></li>
             <li><a href="../material/downloadable.php"><i class="fa fa-download me-2"></i> Downloadable Materials</a></li>
             <li><a href="../assignment/assignment.php"><i class="fa fa-upload me-2"></i> Uploaded Assignments</a></li>
-            <li><a href="../content/content.php">📰 Content</a></li>
+            <!-- <li><a href="../content/content.php">📰 Content</a></li> -->
             <li><a href="../user_log/user_log.php"><i class="fa fa-history me-2"></i> User Log</a></li>
             <li><a href="../user_log/student_log.php"><i class="fa fa-history me-2"></i> Student Log</a></li>
             <li><a href="../activity_log/activity_log.php"><i class="fa fa-list me-2"></i> Activity Log</a></li>

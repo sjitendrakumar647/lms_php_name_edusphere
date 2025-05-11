@@ -3,15 +3,12 @@ include('../dbcon.php');
 include('../session.php');
 $student_id = $_POST['student_id'];
 $my_message = $_POST['my_message'];
-// echo $student_id;
-// echo $my_message;
 
-// receiver details
+
 $query = mysqli_query($conn,"select * from student where student_id = '$student_id'")or die(mysqli_error());
 $row = mysqli_fetch_array($query);
 $name = $row['firstname']." ".$row['lastname'];
 
-// sender details
 $query1 = mysqli_query($conn,"select * from student where student_id = '$session_id'")or die(mysqli_error());
 $row1 = mysqli_fetch_array($query1);
 $name1 = $row1['firstname']." ".$row1['lastname'];

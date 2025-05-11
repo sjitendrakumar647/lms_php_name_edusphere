@@ -52,7 +52,7 @@
               <button type="submit" name="login" id="signin" class="submit-button">Login</button>
               
               <div class="forgot-password">
-                <a href="#">Forgot password ?</a>
+                <a href="forgot_password.php">Forgot password ?</a>
               </div>
             </form>
             
@@ -99,7 +99,7 @@
               <p>Create your account</p>
             </div>
             
-            <form method="post" action="student/student_signup.php" >
+            <form method="post" action="signup.php" >
               <div class="form-row">
                 <div class="form-group">
                   <input type="text" id="firstname" name="firstname" placeholder="First Name" required>

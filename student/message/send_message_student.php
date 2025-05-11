@@ -1,6 +1,6 @@
 <?php
 include('../dbcon.php');
-include('session.php');
+include('../session.php');
 $teacher_id = $_POST['teacher_id'];
 $my_message = $_POST['my_message'];
 

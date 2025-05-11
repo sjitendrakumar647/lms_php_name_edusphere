@@ -56,10 +56,10 @@
     <!-- Sidebar Navigation -->
     <ul class="nav flex-column mt-3">
         <li class="nav-item">
-            <a href="dashboard_teacher.php" class="nav-link"><i class="bi bi-people"></i> My Class</a>
+            <a href="../dashboard_teacher.php" class="nav-link"><i class="bi bi-people"></i> My Class</a>
         </li>
         <li class="nav-item">
-            <a href="notification_teacher.php" class="nav-link">
+            <a href="../notification_teacher.php" class="nav-link">
                 <i class="bi bi-bell"></i> Notification
                 <?php if ($not_read > 0) { ?>
                     <span class="badge badge-important"><?php echo $not_read; ?></span>
