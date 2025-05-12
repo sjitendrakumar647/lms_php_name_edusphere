@@ -6,6 +6,18 @@
     <div class="card-body">
         <form id="add_student" action="#" method="post">
             <!-- Course Selection -->
+             <div class="mb-3">
+                <label class="form-label"><i class="bi bi-book"></i> Select Department</label>
+                <select name="department_id" class="form-select" required>
+                    <option value="">-- Select Department --</option>
+                    <?php
+                    $dept_query = mysqli_query($conn, "SELECT * FROM department ORDER BY department_name");
+                    while ($dept_row = mysqli_fetch_array($dept_query)) {
+                        echo '<option value="' . htmlspecialchars($dept_row['department_id']) . '">' . htmlspecialchars($dept_row['department_name']) . '</option>';
+                    }
+                    ?>
+                </select>
+            </div>
             <div class="mb-3">
                 <label class="form-label"><i class="bi bi-book"></i> Select Class</label>
                 <select name="class_id" class="form-select" required>
@@ -19,23 +31,12 @@
                     ?>
                 </select>
             </div>
-            <div class="mb-3">
-                <label class="form-label"><i class="bi bi-book"></i> Select Department</label>
-                <select name="department_id" class="form-select" required>
-                    <option value="">-- Select Department --</option>
-                    <?php
-                    $dept_query = mysqli_query($conn, "SELECT * FROM department ORDER BY department_name");
-                    while ($dept_row = mysqli_fetch_array($dept_query)) {
-                        echo '<option value="' . htmlspecialchars($dept_row['department_id']) . '">' . htmlspecialchars($dept_row['department_name']) . '</option>';
-                    }
-                    ?>
-                </select>
-            </div>
+            
 
             <!-- ID Number -->
             <div class="mb-3">
                 <label class="form-label"><i class="bi bi-credit-card"></i> ID Number</label>
-                <input name="un" type="text" class="form-control" placeholder="Enter ID Number" required>
+                <input name="un" type="text" class="form-control" minlength="8" placeholder="Enter ID Number" required>
             </div>
 
             <!-- First Name -->

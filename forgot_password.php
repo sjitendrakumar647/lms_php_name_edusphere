@@ -7,12 +7,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = mysqli_real_escape_string($conn, $_POST['username']);
     $user_type = mysqli_real_escape_string($conn, $_POST['user_type']); // Added user type selection
 
+    // Function to generate a secure password
+    function generateSecurePassword($length = 8) {
+        $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@$!%*?&';
+        $password = '';
+        $charactersLength = strlen($characters);
+        for ($i = 0; $i < $length; $i++) {
+            $password .= $characters[rand(0, $charactersLength - 1)];
+        }
+        // Ensure the password meets the criteria
+        if (!preg_match('/[A-Za-z]/', $password) || !preg_match('/\d/', $password) || !preg_match('/[@$!%*?&]/', $password)) {
+            return generateSecurePassword($length); // Regenerate if criteria not met
+        }
+        return $password;
+    }
+
     if ($user_type == 'student') {
         // Check if the username exists in the student table
         $query = mysqli_query($conn, "SELECT * FROM student WHERE username='$username'") or die(mysqli_error($conn));
         if (mysqli_num_rows($query) > 0) {
-            // Generate a random 6-digit password
-            $new_password = rand(100000, 999999);
+            // Generate a secure password
+            $new_password = generateSecurePassword();
 
             // Update the student's password in the database
             mysqli_query($conn, "UPDATE student SET password='$new_password' WHERE username='$username'") or die(mysqli_error($conn));
@@ -27,8 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Check if the username exists in the teacher table
         $query = mysqli_query($conn, "SELECT * FROM teacher WHERE username='$username'") or die(mysqli_error($conn));
         if (mysqli_num_rows($query) > 0) {
-            // Generate a random 6-digit password
-            $new_password = rand(100000, 999999);
+            // Generate a secure password
+            $new_password = generateSecurePassword();
 
             // Update the teacher's password in the database
             mysqli_query($conn, "UPDATE teacher SET password='$new_password' WHERE username='$username'") or die(mysqli_error($conn));

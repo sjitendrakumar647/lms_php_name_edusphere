@@ -38,7 +38,7 @@
                         ?>
 
                         <!-- Password Change Form -->
-                        <form action="update_password_student.php" method="post"  class="needs-validation" novalidate>
+                        <form action="update_password_student.php" method="post" id="change_password" class="needs-validation" novalidate>
                             <div class="mb-3">
                                 <label for="current_password" class="form-label">Current Password <span class="text-danger">*</span></label>
                                 <div class="input-group">
@@ -58,6 +58,7 @@
                                         <i class="bi bi-eye"></i>
                                     </button>
                                 </div>
+                                <small class="text-muted">Password must be at least 8 characters long, include at least one letter, one number, and one special character.</small>
                             </div>
 
                             <div class="mb-3">
@@ -68,6 +69,7 @@
                                         <i class="bi bi-eye"></i>
                                     </button>
                                 </div>
+                                <small id="password-match-error" class="text-danger d-none">Passwords do not match.</small>
                             </div>
 
                             <div class="text-center">
@@ -79,59 +81,64 @@
             </div>
         </div>
     </div>
-	<?php if (isset($_GET['status'])): ?>
-		<?php if ($_GET['status'] == 'success'): ?>
-			<div class="alert alert-success">Password successfully updated.</div>
-		<?php elseif ($_GET['status'] == 'error'): ?>
-			<div class="alert alert-danger">Error updating password. Please try again.</div>
-		<?php elseif ($_GET['status'] == 'empty'): ?>
-			<div class="alert alert-warning">Password cannot be empty.</div>
-		<?php endif; ?>
-	<?php endif; ?>
-    
 
     <?php include('footer.php'); ?>
 
     <script>
-        // jQuery Validation and Password Change Request
-        jQuery(document).ready(function () {
-            jQuery("#change_password").submit(function (e) {
-                e.preventDefault();
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector("#change_password");
+            const newPasswordInput = document.querySelector("#new_password");
+            const retypePasswordInput = document.querySelector("#retype_password");
+            const passwordMatchError = document.querySelector("#password-match-error");
 
-                var password = jQuery('#password').val();
-                var current_password = jQuery('#current_password').val();
-                var new_password = jQuery('#new_password').val();
-                var retype_password = jQuery('#retype_password').val();
+            // Form submission handler
+            form.addEventListener("submit", function (e) {
+                const currentPassword = document.querySelector("#current_password").value;
+                const newPassword = newPasswordInput.value;
+                const retypePassword = retypePasswordInput.value;
 
-                if (password != current_password) {
-                    $.jGrowl("Incorrect current password!", { header: 'Change Password Failed', theme: 'bg-danger' });
-                } else if (new_password !== retype_password) {
-                    $.jGrowl("New passwords do not match!", { header: 'Change Password Failed', theme: 'bg-warning' });
+                // Password validation regex
+                const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+                // Validate current password
+                if (currentPassword !== document.querySelector("#password").value) {
+                    e.preventDefault();
+                    alert("Incorrect current password!");
+                    return;
+                }
+
+                // Validate new password
+                if (!passwordRegex.test(newPassword)) {
+                    e.preventDefault();
+                    alert("New password must be at least 8 characters long, include at least one letter, one number, and one special character.");
+                    return;
+                }
+
+                // Validate password match
+                if (newPassword !== retypePassword) {
+                    e.preventDefault();
+                    passwordMatchError.classList.remove("d-none");
+                    return;
                 } else {
-                    var formData = jQuery(this).serialize();
-                    $.ajax({
-                        type: "POST",
-                        url: "update_password_student.php",
-                        data: formData,
-                        success: function (response) {
-                            $.jGrowl("Your password has been successfully changed!", { header: 'Change Password Success', theme: 'bg-success' });
-                            setTimeout(function () { window.location = 'dashboard_student.php'; }, 2000);
-                        }
-                    });
+                    passwordMatchError.classList.add("d-none");
                 }
             });
 
             // Toggle Password Visibility
-            $(".toggle-password").click(function () {
-                var input = $(this).prev("input");
-                var icon = $(this).find("i");
-                if (input.attr("type") === "password") {
-                    input.attr("type", "text");
-                    icon.removeClass("bi-eye").addClass("bi-eye-slash");
-                } else {
-                    input.attr("type", "password");
-                    icon.removeClass("bi-eye-slash").addClass("bi-eye");
-                }
+            document.querySelectorAll(".toggle-password").forEach(button => {
+                button.addEventListener("click", function () {
+                    const input = this.previousElementSibling;
+                    const icon = this.querySelector("i");
+                    if (input.type === "password") {
+                        input.type = "text";
+                        icon.classList.remove("bi-eye");
+                        icon.classList.add("bi-eye-slash");
+                    } else {
+                        input.type = "password";
+                        icon.classList.remove("bi-eye-slash");
+                        icon.classList.add("bi-eye");
+                    }
+                });
             });
         });
     </script>
