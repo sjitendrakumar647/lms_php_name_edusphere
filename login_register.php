@@ -99,7 +99,7 @@
               <p>Create your account</p>
             </div>
             
-            <form method="post" action="signup.php" >
+            <form method="post" action="signup.php" id="register-form">
               <div class="form-row">
                 <div class="form-group">
                   <input type="text" id="firstname" name="firstname" placeholder="First Name" required>
@@ -278,7 +278,26 @@
     
     // Register form submission
 
-    
+      document.getElementById('register-form').addEventListener('submit', function (e) {
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('cpassword').value;
+
+    // Password validation regex
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    if (!passwordRegex.test(password)) {
+      e.preventDefault();
+      alert('Password must be at least 8 characters long, include at least one letter, one number, and one special character.');
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      e.preventDefault();
+      alert('Passwords do not match.');
+      return;
+    }
+  });
+  
     // Add animation to elements when page loads
     document.querySelectorAll('.card-header, .form-group, .submit-button, .gradient-circle').forEach((el, index) => {
       el.style.animation = `fadeIn 0.5s forwards ${index * 0.1}s`;

@@ -53,7 +53,7 @@
                                                 <img src="images/classroom.jpg" class="card-img-top" alt="Class Thumbnail" style="height: 120px; object-fit: cover;"> <!-- Adjusted image height -->
                                                 <div class="card-body p-2"> <!-- Reduced padding -->
                                                     <h6 class="card-title text-truncate"><?php echo $row['class_name']; ?></h6> <!-- Truncated long titles -->
-                                                    <p class="card-text mb-1"><strong>Subject:</strong> <?php echo $row['subject_code']; ?></p>
+                                                    <p class="card-text mb-1"><strong>Subject:</strong> <?php echo $row['subject_title']; ?></p>
                                                     <p class="card-text mb-1"><strong>Teacher:</strong> <?php echo $row['firstname'] . " " . $row['lastname']; ?></p>
                                                     <a href="my_classmates.php?id=<?php echo $row['teacher_class_id']; ?>" class="btn btn-primary btn-sm w-100">View Class</a> <!-- Full-width button -->
                                                 </div>

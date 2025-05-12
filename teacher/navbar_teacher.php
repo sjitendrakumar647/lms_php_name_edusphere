@@ -23,7 +23,7 @@
                         <?php echo $row['firstname'] . " " . $row['lastname']; ?>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                        <li><a class="dropdown-item" href="profile_teacher.php"><i class="bi bi-person"></i> Profile</a></li>
+                        <!-- <li><a class="dropdown-item" href="profile_teacher.php"><i class="bi bi-person"></i> Profile</a></li> -->
                         <li><a class="dropdown-item" href="change_password_teacher.php"><i class="bi bi-key"></i> Change Password</a></li>
                         <li><a class="dropdown-item" href="#myModal" data-bs-toggle="modal"><i class="bi bi-image"></i> Change Avatar</a></li>
                         <li><hr class="dropdown-divider"></li>

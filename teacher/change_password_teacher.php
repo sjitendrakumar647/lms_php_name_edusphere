@@ -1,8 +1,8 @@
-]<?php include('../header_dashboard.php'); ?>
+<?php include('header_dashboard.php'); ?>
 <?php include('session.php'); ?>
 <body>
     <?php include('navbar_teacher.php'); ?>
-    <div class="container-fluid mt-4">
+    <div class="container-fluid mt-5">
         <div class="row">
             <?php include('teacher_sidebar.php'); ?>
             <div class="col-lg-9">

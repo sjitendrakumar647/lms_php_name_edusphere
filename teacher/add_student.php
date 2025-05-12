@@ -68,13 +68,12 @@
                                                 <td><?php echo htmlspecialchars($row['firstname'] . " " . $row['lastname']); ?></td>
                                                 <td><?php echo htmlspecialchars($row['class_name']); ?></td>
                                                 <td width="150">
-                                                    <select name="add_student<?php echo $a; ?>" class="form-select">
-                                                        <option value="">Select</option>
-                                                        <option value="Add">Add</option>
-                                                    </select>
-                                                    <input type="hidden" name="student_id<?php echo $a; ?>" value="<?php echo $id; ?>">
-                                                    <input type="hidden" name="class_id<?php echo $a; ?>" value="<?php echo $get_id; ?>">
-                                                    <input type="hidden" name="teacher_id<?php echo $a; ?>" value="<?php echo $session_id; ?>">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" name="add_student[]" value="<?php echo $id; ?>" id="student<?php echo $id; ?>">
+                                                        <label class="form-check-label" for="student<?php echo $id; ?>">Add</label>
+                                                    </div>
+                                                    <input type="hidden" name="class_id<?php echo $id; ?>" value="<?php echo $get_id; ?>">
+                                                    <input type="hidden" name="teacher_id<?php echo $id; ?>" value="<?php echo $session_id; ?>">
                                                 </td>
                                             </tr>
                                         <?php } ?>
@@ -92,16 +91,9 @@
     <?php
     if (isset($_POST['submit'])) {
         $test = $_POST['test'];
-        for ($b = 1; $b <= $test; $b++) {
-            $test1 = "student_id" . $b;
-            $test2 = "class_id" . $b;
-            $test3 = "teacher_id" . $b;
-            $test4 = "add_student" . $b;
-
-            $id = $_POST[$test1];
-            $class_id = $_POST[$test2];
-            $teacher_id = $_POST[$test3];
-            $Add = $_POST[$test4];
+        foreach ($_POST['add_student'] as $id) {
+            $class_id = $_POST["class_id$id"];
+            $teacher_id = $_POST["teacher_id$id"];
 
             $query = mysqli_query($conn, "SELECT * FROM teacher_class_student WHERE student_id = '$id' AND teacher_class_id = '$class_id'") or die(mysqli_error($conn));
             $count = mysqli_num_rows($query);
@@ -109,7 +101,7 @@
             if ($count > 0) {
                 echo "<script>alert('Student Added successfully');</script>";
                 echo "<script>window.location = 'my_students.php?id=$get_id';</script>";
-            } else if ($Add == 'Add') {
+            } else {
                 mysqli_query($conn, "INSERT INTO teacher_class_student (student_id, teacher_class_id, teacher_id) VALUES ('$id', '$class_id', '$teacher_id')") or die(mysqli_error($conn));
             }
         }
