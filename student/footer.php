@@ -107,32 +107,6 @@ body {
   background-color: #5a4fcf;
 }
 
-/* Messenger Button */
-.messenger-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  background-color: #6c5ce7;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 100;
-  transition: transform 0.3s;
-}
-
-.messenger-button:hover {
-  transform: scale(1.05);
-}
-
-.messenger-button a {
-  color: white;
-  font-size: 24px;
-}
-
 /* Responsive Styles */
 @media (max-width: 992px) {
   .footer-content .container {
@@ -194,10 +168,10 @@ body {
 
         <!-- About Column -->
         <div class="footer-column">
-          <h4>ABOUT SAVVY</h4>
+          <h4>ABOUT Edusphere</h4>
           <ul class="footer-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Get in touch</a></li>
+            <li><a href="dashboard_student.php">Home</a></li>
+            <li><a href="student_notification.php">notification</a></li>
             <li><a href="../faq.html">FAQs</a></li>
           </ul>
         </div>
@@ -216,18 +190,15 @@ body {
         <div class="footer-column newsletter-column">
           <h4>NOT QUITE READY FOR SAVVY?</h4>
           <p>Join our online no-code community for free. No spam. Ever.</p>
-          <div class="newsletter-form">
-            <input type="email" placeholder="Enter your email">
-            <button type="submit" class="btn-subscribe">Subscribe</button>
-          </div>
+          
+            <form action="https://getform.io/f/amdkqmdb" method="post">
+              <div class="newsletter-form">
+              <input type="email" name="email" placeholder="Enter your email">
+              <button type="submit" class="btn-subscribe">Subscribe</button>
+              </div>
+            </form>
+          
         </div>
       </div>
-    </div>
-
-    <!-- Messenger Chat Button -->
-    <div class="messenger-button">
-      <a href="message/student_message.php" target="_blank" title="Chat with us!">
-        <i class="fab fa-facebook-messenger"></i>
-      </a>
     </div>
   </footer>
