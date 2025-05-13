@@ -20,7 +20,7 @@
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                     <i class="bi bi-x-circle"></i> Close
                 </button>
-                <button type="button" id="remove<?php echo $id; ?>" class="btn btn-danger remove" data-id="<?php echo $id; ?>">
+                <button type="button" class="btn btn-danger remove" data-id="<?php echo $id; ?>" data-bs-dismiss="modal">
                     <i class="bi bi-check-circle"></i> Yes, Remove
                 </button>
             </div>

@@ -67,12 +67,12 @@
             </a>
         </li>
         <li class="nav-item"><a href="teacher_message.php" class="nav-link active"><i class="bi bi-envelope"></i> Message</a></li>
-        <li class="nav-item"><a href="../teacher_backack.php" class="nav-link"><i class="bi bi-briefcase"></i> Backpack</a></li>
+        <li class="nav-item"><a href="../teacher_backpack.php" class="nav-link"><i class="bi bi-briefcase"></i> Backpack</a></li>
         <li class="nav-item"><a href="../add_downloadable.php" class="nav-link"><i class="bi bi-cloud-arrow-down"></i> Add Downloadables</a></li>
         <li class="nav-item"><a href="../add_announcement.php" class="nav-link"><i class="bi bi-megaphone"></i> Add Announcement</a></li>
         <li class="nav-item"><a href="../add_assignment.php" class="nav-link"><i class="bi bi-pencil-square"></i> Add Assignment</a></li>
         <li class="nav-item"><a href="../quiz/teacher_quiz.php" class="nav-link"><i class="bi bi-ui-checks-grid"></i> Quiz</a></li>
-        <li class="nav-item"><a href="../teacher_share.php" class="nav-link"><i class="bi bi-folder"></i> Shared Files</a></li>
+        <!-- <li class="nav-item"><a href="../teacher_share.php" class="nav-link"><i class="bi bi-folder"></i> Shared Files</a></li> -->
     </ul>
 
     <?php 

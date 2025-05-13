@@ -57,7 +57,7 @@
                                         <small class="text-muted float-end"><i class="bi bi-calendar"></i> <?php echo $row['date_sended']; ?></small>
                                         <div class="mt-3 d-flex justify-content-end">
                                             <a href="#reply<?php echo $id; ?>" class="btn btn-sm btn-outline-primary me-2" data-bs-toggle="modal"><i class="bi bi-reply"></i> Reply</a>
-                                            <a href="#removeModal<?php echo $id; ?>" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal"><i class="bi bi-trash"></i> Remove</a>
+                                            <button class="btn btn-sm btn-outline-danger remove" data-id="<?php echo $id; ?>" id="removeModal<?php echo $id; ?>"><i class="bi bi-trash"></i> Remove</button>
                                         </div>
                                     </div>
                                 </div>
@@ -80,18 +80,31 @@
     <!-- JavaScript for AJAX -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Remove Message
-            document.querySelectorAll('.btn-outline-danger').forEach(button => {
+            // Add event listener to all remove buttons
+            document.querySelectorAll('.remove').forEach(button => {
                 button.addEventListener('click', function () {
-                    const id = this.getAttribute('href').replace('#remove', '');
+                    const messageId = this.getAttribute('data-id'); // Get the message ID from the button's data-id attribute
+
+                    // Send AJAX request to delete the message
                     fetch('remove_inbox_message.php', {
                         method: 'POST',
-                        body: new URLSearchParams({ id })
+                        body: new URLSearchParams({ id: messageId })
                     })
                     .then(response => response.text())
-                    .then(() => {
-                        document.getElementById('del' + id).remove();
+                    .then(data => {
+                        // Remove the message card or row from the DOM
+                        const messageCard = document.getElementById('del' + messageId);
+                        if (messageCard) {
+                            messageCard.remove();
+                        }
+
+                        // Show success alert
                         alert('Message successfully deleted.');
+                        window.location.href="teacher_message.php";
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Failed to delete the message.');
                     });
                 });
             });

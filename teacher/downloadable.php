@@ -60,19 +60,9 @@
 
                                 <div class="table-responsive">
                                     <table class="table table-bordered align-middle">
-                                        <!-- Breadcrumb -->
-										<ul class="breadcrumb">
-											<?php
-											$school_year_query = mysqli_query($conn, "SELECT * FROM school_year ORDER BY school_year DESC") or die(mysqli_error($conn));
-											$school_year_row = mysqli_fetch_array($school_year_query);
-											?>
-											<li><a href="#"><b>My Class</b></a> <span class="divider">/</span></li>
-											<li><a href="#">School Year: <?php echo $school_year_row['school_year']; ?></a> <span class="divider">/</span></li>
-											<li><a href="#"><b>Quiz</b></a></li>
-										</ul>
-										<!-- End Breadcrumb -->
                                         <thead class="table-light">
                                             <tr>
+                                                <th><input type="checkbox" id="checkAllFiles"></th>
                                                 <th>Date Upload</th>
                                                 <th>File Name</th>
                                                 <th>Description</th>
@@ -86,6 +76,9 @@
                                                 $id = $row['file_id'];
                                             ?>
                                                 <tr id="del<?php echo $id; ?>">
+                                                    <td>
+                                                        <input type="checkbox" name="selector[]" value="<?php echo $id; ?>" class="form-check-input">
+                                                    </td>
                                                     <td><?php echo $row['fdatein']; ?></td>
                                                     <td><?php echo $row['fname']; ?></td>
                                                     <td><?php echo $row['fdesc']; ?></td>
@@ -98,41 +91,33 @@
                                                             <i class="bi bi-trash"></i>
                                                         </a>
                                                         <!-- Delete File Modal -->
-														<div class="modal fade" id="deleteModal<?php echo $id; ?>" tabindex="-1" aria-labelledby="deleteModalLabel<?php echo $id; ?>" aria-hidden="true">
-															<div class="modal-dialog modal-dialog-centered">
-																<div class="modal-content shadow-lg">
-																	
-																	<div class="modal-header bg-danger text-white">
-																		<h5 class="modal-title" id="deleteModalLabel<?php echo $id; ?>">
-																			<i class="bi bi-exclamation-triangle-fill"></i> Delete File
-																		</h5>
-																		<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-																	</div>
-																	
-																	<div class="modal-body text-center">
-																		<div class="alert alert-danger" role="alert">
-																			<strong>Are you sure?</strong><br> This action cannot be undone!
-																		</div>
-																	</div>
-																	
-																	<div class="modal-footer">
-																		<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-																			<i class="bi bi-x-circle"></i> Cancel
-																		</button>
-																		<button id="<?php echo $id; ?>" type="button" class="btn btn-danger remove" data-bs-dismiss="modal">
-																			<i class="bi bi-trash-fill"></i> Yes, Delete
-																		</button>
-																	</div>
-
-																</div>
-															</div>
-														</div>
-
-                                                    </td>
-                                                    <td>
+                                                        <div class="modal fade" id="deleteModal<?php echo $id; ?>" tabindex="-1" aria-labelledby="deleteModalLabel<?php echo $id; ?>" aria-hidden="true">
+                                                            <div class="modal-dialog modal-dialog-centered">
+                                                                <div class="modal-content shadow-lg">
+                                                                    <div class="modal-header bg-danger text-white">
+                                                                        <h5 class="modal-title" id="deleteModalLabel<?php echo $id; ?>">
+                                                                            <i class="bi bi-exclamation-triangle-fill"></i> Delete File
+                                                                        </h5>
+                                                                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body text-center">
+                                                                        <div class="alert alert-danger" role="alert">
+                                                                            <strong>Are you sure?</strong><br> This action cannot be undone!
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                                            <i class="bi bi-x-circle"></i> Cancel
+                                                                        </button>
+                                                                        <button id="<?php echo $id; ?>" type="button" class="btn btn-danger remove" data-bs-dismiss="modal">
+                                                                            <i class="bi bi-trash-fill"></i> Yes, Delete
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </td>
                                                 </tr>
-
                                             <?php } ?>
                                         </tbody>
                                     </table>
@@ -153,7 +138,7 @@
     <!-- Custom Scripts -->
     <script>
         // Select/Deselect All Checkboxes
-        document.getElementById('checkAll').addEventListener('click', function() {
+        document.getElementById('checkAllFiles').addEventListener('click', function() {
             const checkboxes = document.querySelectorAll('input[type="checkbox"][name="selector[]"]');
             checkboxes.forEach(cb => cb.checked = this.checked);
         });

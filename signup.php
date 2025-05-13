@@ -36,6 +36,13 @@ if ($user == 'student') {
         $row = mysqli_fetch_array($query);
         $id = $row['student_id'];
 
+        // Check if the inputted username matches the existing username
+        if ($row['username'] !== $username) {
+            echo '<script>alert("The username does not match the existing record for this student.");</script>';
+            echo '<script>window.location.href="login_register.php";</script>';
+            exit;
+        }
+
         // Update the student's username, password, and status
         mysqli_query($conn, "UPDATE student SET username='$username', password='$password', status='Registered' WHERE student_id='$id'") or die(mysqli_error($conn));
         $_SESSION['id'] = $id;
@@ -66,6 +73,13 @@ if ($user == 'student') {
     if ($count > 0) {
         $row = mysqli_fetch_array($query);
         $id = $row['teacher_id'];
+
+        // Check if the inputted username matches the existing username
+        if ($row['username'] !== $username) {
+            echo '<script>alert("The username does not match the existing record for this teacher.");</script>';
+            echo '<script>window.location.href="login_register.php";</script>';
+            exit;
+        }
 
         // Update the teacher's username, password, and status
         mysqli_query($conn, "UPDATE teacher SET username='$username', password='$password', teacher_status='Registered' WHERE teacher_id='$id'") or die(mysqli_error($conn));

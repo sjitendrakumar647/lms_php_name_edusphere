@@ -27,7 +27,7 @@
             
             <form id="login-form" method="post">
               <div class="form-group">
-                <input type="text" id="Username" name="username" minlength="8" placeholder="Username" required>
+                <input type="text" id="Username" name="username" placeholder="Username" required>
               </div>
               
               <div class="form-group password-group">

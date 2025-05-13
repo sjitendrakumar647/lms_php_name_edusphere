@@ -1,4 +1,3 @@
-<!-- Modal -->
 <div class="modal fade" id="remove<?php echo $id; ?>" tabindex="-1" aria-labelledby="removeSentMessageModalLabel<?php echo $id; ?>" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -16,7 +15,7 @@
             <!-- Modal Footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="bi bi-x-circle"></i> Close</button>
-                <button id="<?php echo $id; ?>" class="btn btn-danger remove" data-bs-dismiss="modal"><i class="bi bi-check-circle"></i> Yes</button>
+                <button type="button" class="btn btn-danger confirm-remove" data-id="<?php echo $id; ?>" data-bs-dismiss="modal"><i class="bi bi-check-circle"></i> Yes</button>
             </div>
         </div>
     </div>
