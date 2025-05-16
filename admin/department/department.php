@@ -51,9 +51,6 @@
                                                     <td><?php echo $row['department_name']; ?></td>
                                                     <td><?php echo $row['dean']; ?></td>
                                                     <td>
-                                                        <a href="edit_department.php?id=<?php echo $id; ?>" class="btn btn-success btn-sm">
-                                                            <i class="bi bi-pencil-square"></i> Edit
-                                                        </a>
                                                         <button type="button" class="btn btn-danger btn-sm delete-btn" data-id="<?php echo $id; ?>" data-bs-toggle="modal" data-bs-target="#deleteSingleModal">
                                                             <i class="bi bi-trash"></i> Delete
                                                         </button>
