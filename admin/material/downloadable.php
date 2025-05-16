@@ -22,11 +22,11 @@
                     <div class="card-body">
                         <?php
                             // Fetch files from the database
-                            $query = mysqli_query($conn, "SELECT * FROM files 
-                                LEFT JOIN teacher ON teacher.teacher_id = files.teacher_id 
-                                LEFT JOIN teacher_class ON teacher_class.teacher_class_id = files.class_id 
-                                INNER JOIN class ON class.class_id = teacher_class.class_id") 
-                                or die(mysqli_error());
+                            $query = mysqli_query($conn, "SELECT * FROM files
+    LEFT JOIN teacher ON teacher.teacher_id = files.teacher_id 
+    LEFT JOIN teacher_class ON teacher_class.teacher_class_id = files.class_id 
+    INNER JOIN class ON class.class_id = teacher_class.class_id") 
+    or die(mysqli_error());
 
                             // Check if there are any files
                             if (mysqli_num_rows($query) > 0) {
@@ -79,7 +79,9 @@
     
     <script>
         $(document).ready(function() {
-            $('#fileTable').DataTable();
+            $('#fileTable').DataTable({
+                "order": [[0, "desc"]]
+            });
         });
     </script>
 </body>
