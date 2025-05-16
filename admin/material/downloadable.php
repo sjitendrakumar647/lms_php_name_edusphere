@@ -52,7 +52,7 @@
                                         <td><?php echo $row['uploaded_by']; ?></td>
                                         <td><?php echo $row['class_name']; ?></td>
                                         <td>
-                                            <a href="uploads/<?php echo $row['fname']; ?>" download class="btn btn-sm btn-success">
+                                            <a href="../../teacher/<?php echo $row['floc']; ?>" download class="btn btn-sm btn-success">
                                                 <i class="bi bi-download"></i> Download
                                             </a>
                                         </td>

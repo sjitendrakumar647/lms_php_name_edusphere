@@ -62,18 +62,12 @@ if ((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 
     $ext = substr($filename, strrpos($filename, '.') + 1);
 
     if (($ext != "exe") && ($_FILES["uploaded_file"]["type"] != "application/x-msdownload")) {
-        //Determine the path to which we want to save this file      
-        //$newname = dirname(__FILE__).'/upload/'.$filename;
-        $newname = "admin/uploads/" . $rd2 . "_" . $filename;
+        $newname = "uploads/" . $rd2 . "_" . $filename;
 		$name_notification  = 'Add Downloadable Materials file name'." ".'<b>'.$name.'</b>';
         //Check if the file with the same name is already exists on the server
         if (!file_exists($newname)) {
             //Attempt to move the uploaded file to it's new place
             if ((move_uploaded_file($_FILES['uploaded_file']['tmp_name'], $newname))) {
-                //successful upload
-                // echo "It's done! The file has been saved as: ".$newname;		  
-                // echo "INSERT INTO files (fdesc,floc,fdatein,teacher_id,class_id,fname,uploaded_by) VALUES ('$filedesc','$newname',NOW(),'$session_id','$id_class','$name','$uploaded_by')"; 
-                // exit;
                 $qry2 = "INSERT INTO files (fdesc,floc,fdatein,teacher_id,class_id,fname,uploaded_by) VALUES ('$filedesc','$newname',NOW(),'$session_id','$id_class','$name','$uploaded_by')";
 				mysqli_query($conn,"insert into notification (teacher_class_id,notification,date_of_notification,link) value('$get_id','$name_notification',NOW(),'downloadable_student.php')")or die(mysqli_error());
 			   //$result = @mysqli_query($conn,$qry);
